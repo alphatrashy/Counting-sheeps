@@ -1,0 +1,38 @@
+int sensor1 = 2;
+int sensor2 = 3;			
+int valS1;
+int valS2;
+int numofsheep=0;
+
+void setup() {      
+  pinMode(sensor1, INPUT);
+  pinMode(sensor2, INPUT);
+  Serial.begin(9600);        
+}
+
+void loop(){
+  valS1 = digitalRead(sensor1);
+  valS2=digitalRead(sensor2);
+  if (valS1 == 1) {              
+    Serial.println("something entered S1");
+    delay(1000);
+    if (valS2==1){
+    	Serial.println("something entered");
+      	numofsheep=numofsheep+1;
+      	
+      
+    }}
+  else if (valS2==1){
+    Serial.println("something entered S2");
+    delay(1000);
+      if (valS1==1){
+      	Serial.println("something left");
+        numofsheep=numofsheep-1;
+      	
+    }}
+    
+  else {
+      Serial.println(numofsheep);
+  		delay(500);}
+ 
+}
